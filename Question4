@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class Question4 {
+	
+
+		public static void main(String[] args) {
+			
+			int mdice;
+			int ppoint = 0;
+			int numbergame = 0;
+			String playerguess;
+			String play = "yes";
+			
+			Scanner input = new Scanner(System.in);
+			
+			while (play.toLowerCase().equals("yes"))
+			{
+				System.out.println("Welcome to the Hi-Low game!!!");
+				System.out.print("Enter you dice to throw: ");
+				mdice = input.nextInt();
+				
+				Dice cdice = new Dice(mdice);
+				cdice.cthrow();
+				System.out.println("Enter your guess( hi, low or a number):");
+				playerguess = input.next();
+				playerguess.toLowerCase().equals(playerguess);
+				ppoint = cdice.process(playerguess, ppoint);
+				numbergame++;
+				
+				System.out.println("The Scores: " + ppoint);
+				System.out.println("Number of games you have played : " + numbergame);
+				
+				
+			}
+				
+	}
+}
